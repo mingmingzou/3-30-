@@ -5,6 +5,9 @@ import com.qianfeng.fxmall.goods.dao.GoodsDAO;
 import com.qianfeng.fxmall.goods.dao.Impl.GoodsDAOImpl;
 import com.qianfeng.fxmall.goods.service.GoodsService;
 import com.qianfeng.fxmall.goods.service.Impl.GoodsServiceImpl;
+import com.qianfeng.fxmall.goodsku.bean.WxbGoodSku;
+import com.qianfeng.fxmall.goodsku.service.GoodSkuService;
+import com.qianfeng.fxmall.goodsku.service.Impl.GoodSkuServiceImpl;
 
 import java.sql.Timestamp;
 import java.util.List;
@@ -65,7 +68,7 @@ public class TestGood {
              gs.deleteGoods("pb1n3rya");
          }
      }).start();*/
-        new Thread(new Runnable() {
+       /* new Thread(new Runnable() {
             @Override
             public void run() {
                 WxbGood good=new WxbGood();
@@ -95,6 +98,14 @@ public class TestGood {
                 System.out.println(good.getGoodName());
                 gs.updateGoods(good);
             }
-        }).start();
+        }).start();*/
+       new Thread(new Runnable() {
+           @Override
+           public void run() {
+               GoodSkuService gs=new GoodSkuServiceImpl();
+               List<WxbGoodSku> wxbGoodSkus = gs.queryGoodSkuByPage(1);
+               System.out.println(wxbGoodSkus.get(2).getSkuName());
+           }
+       }).start();
     }
 }

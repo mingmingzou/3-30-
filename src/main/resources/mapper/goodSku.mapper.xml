@@ -2,8 +2,8 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.qianfeng.fxmall.goods.mapper.Goods.GoodSkuMapper">
-<resultMap id="goodSkuMap" type="com.qianfeng.fxmall.goods.bean.WxbGoodSku">
+<mapper namespace="com.qianfeng.fxmall.goodsku.mapper.GoodSku.GoodSkuMapper">
+<resultMap id="goodSkuMap" type="com.qianfeng.fxmall.goodsku.bean.WxbGoodSku">
     <id property="skuId" column="sku_id" javaType="java.lang.String"/>
     <result property="skuName" column="sku_name" javaType="java.lang.String"/>
     <result property="skuCost" column="sku_cost" javaType="java.lang.String"/>
@@ -19,5 +19,6 @@ sku_id,sku_name,sku_cost,sku_price,sku_pmoney,good_id,order_no,service_money
     <select id="queryGoodSkuByPage" resultMap="goodSkuMap">
         select <include refid="pram"/> from wxb_good_sku limit #{page},#{size}
     </select>
+    <insert id="addGoodSku"
 </mapper>
 

@@ -2,9 +2,9 @@ package com.qianfeng.fxmall.goodsku.dao.Impl;
 
 import com.qianfeng.fxmall.commons.info.SystemCU;
 import com.qianfeng.fxmall.commons.mybatis.MybatixSessionFU;
-import com.qianfeng.fxmall.goodsku.Goods.GoodSkuMapper;
 import com.qianfeng.fxmall.goodsku.bean.WxbGoodSku;
 import com.qianfeng.fxmall.goodsku.dao.GoodSkuDAO;
+import com.qianfeng.fxmall.goodsku.mapper.GoodSku.GoodSkuMapper;
 
 import java.util.List;
 
