@@ -13,5 +13,7 @@
     <result property="orderNo" column="order_no" javaType="java.lang.Long"/>
     <result property="serviceMoney" column="service_money" javaType="java.lang.String"/>
 </resultMap>
-    <select id=""
+    <select id="queryGoodSkuByPage" resultMap="goodSkuMap">
+        select
+    </select>
 </mapper>
