@@ -1,5 +1,6 @@
 package com.qianfeng.fxmall.goodsku.service.Impl;
 
+import com.qianfeng.fxmall.commons.info.SystemCU;
 import com.qianfeng.fxmall.goodsku.bean.WxbGoodSku;
 import com.qianfeng.fxmall.goodsku.dao.GoodSkuDAO;
 import com.qianfeng.fxmall.goodsku.dao.Impl.GoodSkuDAOImpl;
@@ -11,7 +12,10 @@ public class GoodSkuServiceImpl implements GoodSkuService {
      GoodSkuDAO goodSkuDAO=new GoodSkuDAOImpl();
     @Override
     public List<WxbGoodSku> queryGoodSkuByPage(Integer page) {
-        goodSkuDAO.queryGoodSkuByPage(page);
-        return null;
+        if(page<1){
+            throw new IndexOutOfBoundsException("页面不能小于1");
+        }
+        int index=(page-1)* SystemCU.page.PAGE_SIZE;
+        return goodSkuDAO.queryGoodSkuByPage(index);
     }
 }
