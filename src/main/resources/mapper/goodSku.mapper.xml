@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qianfeng.fxmall.goods.mapper.Goods.GoodSkuMapper">
+<resultMap id="goodSkuMap" type="com.qianfeng.fxmall.goods.bean.WxbGoodSku">
+    <id property="skuId" column="sku_id" javaType="java.lang.String"/>
+    <result property="skuName" column="sku_name" javaType="java.lang.String"/>
+    <result property="skuCost" column="sku_cost" javaType="java.lang.String"/>
+    <result property="skuPrice" column="sku_price" javaType="java.lang.String"/>
+    <result property="skuPmoney" column="sku_pmoney" javaType="java.lang.String"/>
+    <result property="goodId" column="good_id" javaType="java.lang.String"/>
+    <result property="orderNo" column="order_no" javaType="java.lang.Long"/>
+    <result property="serviceMoney" column="service_money" javaType="java.lang.String"/>
+</resultMap>
+    <select id=""
+</mapper>
