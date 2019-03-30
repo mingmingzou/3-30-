@@ -23,6 +23,7 @@ public class GoodsServlet extends HttpServlet {
         req.getRequestDispatcher("goods_list.jsp").forward(req,resp);
     }
 
+
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
     }

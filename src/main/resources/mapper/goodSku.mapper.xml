@@ -13,8 +13,11 @@
     <result property="orderNo" column="order_no" javaType="java.lang.Long"/>
     <result property="serviceMoney" column="service_money" javaType="java.lang.String"/>
 </resultMap>
+    <sql id="pram">
+sku_id,sku_name,sku_cost,sku_price,sku_pmoney,good_id,order_no,service_money
+    </sql>
     <select id="queryGoodSkuByPage" resultMap="goodSkuMap">
-        select
+        select <include refid="pram"/> from wxb_good_sku limit #{page},#{size}
     </select>
 </mapper>
 
