@@ -19,6 +19,10 @@ sku_id,sku_name,sku_cost,sku_price,sku_pmoney,good_id,order_no,service_money
     <select id="queryGoodSkuByPage" resultMap="goodSkuMap">
         select <include refid="pram"/> from wxb_good_sku limit #{page},#{size}
     </select>
-    <insert id="addGoodSku"
+    <insert id="addGoodSku">
+        insert into wxb_good_sku(sku_id,sku_name,sku_cost,sku_price,sku_pmoney,good_id,order_no,service_money)values(#{skuId},#{skuName},#{skuCost},#{skuPrice},#{skuPmoney},#{goodId},#{orderNo},#{serviceMoney})
+    </insert>
+    <delete id="deleteGoodSku">
+        delete from wxb_good_sku where sku_id=#{skuId}
+    </delete>
 </mapper>
-

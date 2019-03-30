@@ -99,13 +99,37 @@ public class TestGood {
                 gs.updateGoods(good);
             }
         }).start();*/
-       new Thread(new Runnable() {
+       /*new Thread(new Runnable() {
            @Override
            public void run() {
                GoodSkuService gs=new GoodSkuServiceImpl();
                List<WxbGoodSku> wxbGoodSkus = gs.queryGoodSkuByPage(1);
                System.out.println(wxbGoodSkus.get(2).getSkuName());
            }
-       }).start();
+       }).start();*/
+     /*  new Thread(new Runnable() {
+           @Override
+           public void run() {
+               GoodSkuService gs=new GoodSkuServiceImpl();
+               WxbGoodSku sku=new WxbGoodSku();
+               Random random=new Random();
+               String stu2="";
+               for (int i=0;i<8;i++){
+                   int a=random.nextInt(10);
+                   stu2=stu2+""+a;
+               }
+               sku.setSkuId(stu2);
+               sku.setSkuName("骚气粉买一送四");
+               sku.setSkuCost("1");
+               sku.setSkuPrice("123");
+               sku.setSkuPmoney("111");
+               sku.setGoodId("21731988");
+               sku.setOrderNo(0);
+               sku.setServiceMoney("0");
+               gs.addGoodSku(sku);
+           }
+       }).start();*/
+        GoodSkuService gs=new GoodSkuServiceImpl();
+        gs.deleteGoodSku("56921751");
     }
 }

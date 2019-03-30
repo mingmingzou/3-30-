@@ -10,6 +10,12 @@ import java.util.List;
 
 public class GoodSkuServiceImpl implements GoodSkuService {
      GoodSkuDAO goodSkuDAO=new GoodSkuDAOImpl();
+
+    @Override
+    public void addGoodSku(WxbGoodSku wxbGoodSku) {
+        goodSkuDAO.addGoodSku(wxbGoodSku);
+    }
+
     @Override
     public List<WxbGoodSku> queryGoodSkuByPage(Integer page) {
         if(page<1){
@@ -17,5 +23,10 @@ public class GoodSkuServiceImpl implements GoodSkuService {
         }
         int index=(page-1)* SystemCU.page.PAGE_SIZE;
         return goodSkuDAO.queryGoodSkuByPage(index);
+    }
+
+    @Override
+    public void deleteGoodSku(String skuId) {
+        goodSkuDAO.deleteGoodSku(skuId);
     }
 }
