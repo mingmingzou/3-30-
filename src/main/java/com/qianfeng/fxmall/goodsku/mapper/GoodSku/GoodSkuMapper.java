@@ -9,4 +9,5 @@ public interface GoodSkuMapper {
     List<WxbGoodSku>  queryGoodSkuByPage(@Param("page") Integer page,@Param("size") Integer size);
     void addGoodSku(WxbGoodSku wxbGoodSku);
     void deleteGoodSku(@Param("skuId") String skuId);
+    void updateGoodSku(WxbGoodSku wxbGoodSku);
 }

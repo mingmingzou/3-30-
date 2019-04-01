@@ -129,7 +129,20 @@ public class TestGood {
                gs.addGoodSku(sku);
            }
        }).start();*/
+        /*GoodSkuService gs=new GoodSkuServiceImpl();
+        gs.deleteGoodSku("56921751");*/
+
         GoodSkuService gs=new GoodSkuServiceImpl();
-        gs.deleteGoodSku("56921751");
+        WxbGoodSku sku=new WxbGoodSku();
+
+        sku.setSkuId("60322786");
+        sku.setSkuName("骚气粉买一送十");
+        sku.setSkuCost("1");
+        sku.setSkuPrice("110000");
+        sku.setSkuPmoney("123456");
+        sku.setGoodId("21731988");
+        sku.setOrderNo(0);
+        sku.setServiceMoney("0");
+        gs.updateGoodSku(sku);
     }
 }

@@ -29,4 +29,9 @@ public class GoodSkuServiceImpl implements GoodSkuService {
     public void deleteGoodSku(String skuId) {
         goodSkuDAO.deleteGoodSku(skuId);
     }
+
+    @Override
+    public void updateGoodSku(WxbGoodSku wxbGoodSku) {
+        goodSkuDAO.updateGoodSku(wxbGoodSku);
+    }
 }

@@ -25,4 +25,7 @@ sku_id,sku_name,sku_cost,sku_price,sku_pmoney,good_id,order_no,service_money
     <delete id="deleteGoodSku">
         delete from wxb_good_sku where sku_id=#{skuId}
     </delete>
+    <update id="updateGoodSku">
+        update wxb_good_sku set sku_name=#{skuName},sku_cost=#{skuCost},sku_price=#{skuPrice},sku_pmoney=#{skuPmoney},good_id=#{goodId},order_no=#{orderNo},service_money=#{serviceMoney} where sku_id=#{skuId}
+    </update>
 </mapper>

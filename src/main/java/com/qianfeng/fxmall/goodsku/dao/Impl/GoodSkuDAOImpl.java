@@ -32,4 +32,12 @@ public class GoodSkuDAOImpl implements GoodSkuDAO {
         goodSkuMapper.deleteGoodSku(skuId);
         session.commit();
     }
+
+    @Override
+    public void updateGoodSku(WxbGoodSku wxbGoodSku) {
+        SqlSession session=MybatixSessionFU.getSession();
+        GoodSkuMapper goodSkuMapper=session.getMapper(GoodSkuMapper.class);
+        goodSkuMapper.updateGoodSku(wxbGoodSku);
+        session.commit();
+    }
 }

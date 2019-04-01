@@ -8,4 +8,5 @@ public interface GoodSkuService {
     void addGoodSku(WxbGoodSku wxbGoodSku);
     List<WxbGoodSku> queryGoodSkuByPage(Integer page);
     void deleteGoodSku(String skuId);
+    void updateGoodSku(WxbGoodSku wxbGoodSku);
 }

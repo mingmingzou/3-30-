@@ -8,4 +8,5 @@ public interface GoodSkuDAO {
      List<WxbGoodSku> queryGoodSkuByPage(Integer page);
      void addGoodSku(WxbGoodSku wxbGoodSku);
      void  deleteGoodSku(String skuId);
+     void updateGoodSku(WxbGoodSku wxbGoodSku);
 }
