@@ -8,12 +8,15 @@ import com.qianfeng.fxmall.goods.service.Impl.GoodsServiceImpl;
 import com.qianfeng.fxmall.goodsku.bean.WxbGoodSku;
 import com.qianfeng.fxmall.goodsku.service.GoodSkuService;
 import com.qianfeng.fxmall.goodsku.service.Impl.GoodSkuServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.sql.Timestamp;
 import java.util.List;
 import java.util.Random;
 
 public class TestGood {
+    @Autowired
+    private static  GoodsDAO  goodsDAO;
     public static void main(String[] args){
      /*   new Thread(new Runnable() {
             @Override
@@ -132,7 +135,7 @@ public class TestGood {
         /*GoodSkuService gs=new GoodSkuServiceImpl();
         gs.deleteGoodSku("56921751");*/
 
-        GoodSkuService gs=new GoodSkuServiceImpl();
+       /* GoodSkuService gs=new GoodSkuServiceImpl();
         WxbGoodSku sku=new WxbGoodSku();
 
         sku.setSkuId("60322786");
@@ -143,6 +146,11 @@ public class TestGood {
         sku.setGoodId("21731988");
         sku.setOrderNo(0);
         sku.setServiceMoney("0");
-        gs.updateGoodSku(sku);
+        gs.updateGoodSku(sku);*/
+        System.out.println("aaaaaaaaaaaaaaaaa");
+        goodsDAO.deleteGoods("44671132");
+
+
+
     }
 }

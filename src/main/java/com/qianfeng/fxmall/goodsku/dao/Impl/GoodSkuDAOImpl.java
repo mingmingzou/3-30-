@@ -1,25 +1,27 @@
 package com.qianfeng.fxmall.goodsku.dao.Impl;
 
 import com.qianfeng.fxmall.commons.info.SystemCU;
-import com.qianfeng.fxmall.commons.mybatis.MybatixSessionFU;
 import com.qianfeng.fxmall.goodsku.bean.WxbGoodSku;
 import com.qianfeng.fxmall.goodsku.dao.GoodSkuDAO;
 import com.qianfeng.fxmall.goodsku.mapper.GoodSku.GoodSkuMapper;
 import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
-
+@Component
 public class GoodSkuDAOImpl implements GoodSkuDAO {
+    @Autowired
+    private SqlSession session;
     @Override
     public List<WxbGoodSku> queryGoodSkuByPage(Integer page) {
-        GoodSkuMapper goodSkuMapper= MybatixSessionFU.getSession().getMapper(GoodSkuMapper.class);
+        GoodSkuMapper goodSkuMapper= session.getMapper(GoodSkuMapper.class);
         List<WxbGoodSku> wxbGoodSkuList=goodSkuMapper.queryGoodSkuByPage(page, SystemCU.page.PAGE_SIZE);
         return wxbGoodSkuList;
     }
 
     @Override
     public void addGoodSku(WxbGoodSku wxbGoodSku) {
-        SqlSession session=MybatixSessionFU.getSession();
         GoodSkuMapper goodSkuMapper=session.getMapper(GoodSkuMapper.class);
         goodSkuMapper.addGoodSku(wxbGoodSku);
         session.commit();
@@ -27,7 +29,6 @@ public class GoodSkuDAOImpl implements GoodSkuDAO {
 
     @Override
     public void deleteGoodSku(String skuId) {
-        SqlSession session=MybatixSessionFU.getSession();
         GoodSkuMapper goodSkuMapper=session.getMapper(GoodSkuMapper.class);
         goodSkuMapper.deleteGoodSku(skuId);
         session.commit();
@@ -35,7 +36,6 @@ public class GoodSkuDAOImpl implements GoodSkuDAO {
 
     @Override
     public void updateGoodSku(WxbGoodSku wxbGoodSku) {
-        SqlSession session=MybatixSessionFU.getSession();
         GoodSkuMapper goodSkuMapper=session.getMapper(GoodSkuMapper.class);
         goodSkuMapper.updateGoodSku(wxbGoodSku);
         session.commit();

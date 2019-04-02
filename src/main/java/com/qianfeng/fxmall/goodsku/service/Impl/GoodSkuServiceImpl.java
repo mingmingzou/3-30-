@@ -1,16 +1,21 @@
 package com.qianfeng.fxmall.goodsku.service.Impl;
 
 import com.qianfeng.fxmall.commons.info.SystemCU;
+import com.qianfeng.fxmall.goods.dao.GoodsDAO;
 import com.qianfeng.fxmall.goodsku.bean.WxbGoodSku;
 import com.qianfeng.fxmall.goodsku.dao.GoodSkuDAO;
 import com.qianfeng.fxmall.goodsku.dao.Impl.GoodSkuDAOImpl;
 import com.qianfeng.fxmall.goodsku.service.GoodSkuService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+@Component
 public class GoodSkuServiceImpl implements GoodSkuService {
-     GoodSkuDAO goodSkuDAO=new GoodSkuDAOImpl();
-
+//     GoodSkuDAO goodSkuDAO=new GoodSkuDAOImpl();
+    @Autowired
+     private GoodSkuDAO goodSkuDAO;
     @Override
     public void addGoodSku(WxbGoodSku wxbGoodSku) {
         goodSkuDAO.addGoodSku(wxbGoodSku);
